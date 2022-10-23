@@ -5,14 +5,13 @@ from Page_objects.base_page import BasePage
 
 
 class MyAccount(BasePage):
+
     # Identification of objects on my account page.
     account_settings_dropdown = (By.XPATH, "//div[@data-testid='menuSection-MyAccount']")
     my_account_menu_item = (By.XPATH, "//a[@data-testid='menuButton-UserSettings']")
     my_account_list_of_watchdogs = (By.XPATH, "//a[@data-testid='menuButton-UserWatchDog']")
     data_is_saving_text = (By.XPATH, "//span[@class='saving'][contains(@style, 'inline')]/span[@class='text']")
     data_was_saved_text = (By.XPATH, "//span[@class='saved'][contains(@style, 'inline')]/span[@class='text']")
-    name_surname_input = (By.NAME, "name")
-    name_surname_input_correctly_filled = (By.XPATH, "//input[@name='name'][contains(@class, 'valid')]")
     street_input = (By.NAME, "street")
     street_input_correctly_filled = (By.XPATH, "//input[@name='street'][contains(@class, 'valid')][not(contains(@class, 'empt'))]")
     zip_input = (By.NAME, "zip")
@@ -24,7 +23,6 @@ class MyAccount(BasePage):
     watchdog_item_removal_confirmation_button = (By.XPATH, "//div[@id='alzaDialog'][not(contains(@style, 'opacity'))]//span[@class='btnx normal green ok']")
     watchdog_remove_question_dialog = (By.ID, "alzaDialog")
     text_all_items_removed_from_watchdog_list = (By.XPATH, "//div[@class='watchDogList']//div[@class='alzBox warn']")
-
 
     # Initialization.
     def __init__(self, driver):
@@ -38,11 +36,6 @@ class MyAccount(BasePage):
         self.base_click(self.my_account_menu_item)
         # Following method helps initialize the page as validations there are dynamic.
         self.base_element_exists(self.data_was_saved_text, 50)
-        # self.base_click(self.name_surname_input)
-        # self.base_send_keys(self.name_surname_input, Keys.SPACE)
-        # self.base_send_keys(self.name_surname_input, Keys.BACKSPACE)
-        # self.base_is_visible(self.name_surname_input_correctly_filled)
-        # self.base_send_keys(self.name_surname_input, Keys.TAB)
 
     def my_account_click_at_watchdog_list_menu_item(self):
         self.base_click(self.my_account_list_of_watchdogs)
@@ -73,7 +66,6 @@ class MyAccount(BasePage):
     def my_account_get_street_value(self):
         if self.base_is_visible(self.street_input):
             self.base_click(self.street_input)
-            # self.base_is_visible(self.street_input_correctly_filled)
             street_value = self.base_get_element_attribute_value(self.street_input, "value")
             self.base_send_keys(self.street_input, Keys.TAB)
             return street_value
@@ -81,8 +73,6 @@ class MyAccount(BasePage):
     def my_account_get_zip_value(self):
         if self.base_is_visible(self.zip_input):
             self.base_click(self.zip_input)
-            # self.base_send_keys(self.zip_input, Keys.SPACE)  # Pressing space doesn't change value as field is fully filled already.
-            # self.base_is_visible(self.zip_input_correctly_filled)
             zip_value = self.base_get_element_attribute_value(self.zip_input, "value")
             self.base_send_keys(self.zip_input, Keys.TAB)
             return zip_value

@@ -3,6 +3,7 @@ from Page_objects.base_page import BasePage
 
 
 class LoginDialog(BasePage):
+
     # Identification of objects on login dialog.
     login_frame = (By.ID, "loginIframe")
     email_input = (By.XPATH, "//input[@id='userName' and not(@readonly)]")

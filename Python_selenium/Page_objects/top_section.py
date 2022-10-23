@@ -31,7 +31,7 @@ class TopSection(BasePage):
     def top_section_click_logout_link(self):
         self.base_click(self.logout_link)
 
-    def top_section_search_provide(self, value):
+    def top_section_search_provide_value(self, value):
         self.base_clear_input(self.search_input)
         self.base_send_keys(self.search_input, value)
 

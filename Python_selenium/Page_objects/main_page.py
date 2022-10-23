@@ -3,6 +3,7 @@ from Page_objects.base_page import BasePage
 
 
 class MainPage(BasePage):
+
     # Identification of objects on main page.
     category_section_header = (By.XPATH, "//div[@class='categoryPage']/h1")
     item_detail_page = (By.XPATH, "//div[contains(@class, 'detail-page')]")

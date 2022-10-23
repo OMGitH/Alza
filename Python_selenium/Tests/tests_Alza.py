@@ -138,14 +138,14 @@ class TestsAlza:
         self.login_dialog.login_successful_login(TestData.user_name, TestData.password)
 
         # Search for "jízdní kola" and click search button:
-        self.top_section.top_section_search_provide(TestData.search_value_via_search_button)
+        self.top_section.top_section_search_provide_value(TestData.search_value_via_search_button)
         self.top_section.top_section_click_search_button()
         # Check result.
         assert self.main_page.main_page_get_search_result_header() == TestData.search_result_header_via_search_button
         assert self.main_page.main_page_get_search_result_items_amount() > 0
 
         # Search for "recenze" and choose from suggestion:
-        self.top_section.top_section_search_provide(TestData.search_value_via_suggestion)
+        self.top_section.top_section_search_provide_value(TestData.search_value_via_suggestion)
         self.top_section.top_section_search_suggestion_click_1st_article()
         # Check result.
         assert TestData.search_result_word_in_header_via_suggestion in self.main_page.main_page_get_search_result_header().lower()
