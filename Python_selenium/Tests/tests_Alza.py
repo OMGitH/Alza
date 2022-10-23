@@ -17,8 +17,10 @@ class TestsAlza:
         """
         Tests log in functionality. First all cookies are rejected, then login is clicked to invoke login dialog.
         Credential fields are blank, signin button is pressed and is checked that login dialog stays open and there are correspondent error messages displayed.
-        Then wrong email address is provided with correct password, signin button is pressed and is checked that login dialog stays displayed.
-        Then correct email address is provided with wrong password, signin button is pressed and is checked that login dialog stays displayed.
+        Then wrong email address is provided with correct password, signin button is pressed and is checked that login dialog stays displayed and there is correct
+        text on signin button.
+        Then correct email address is provided with wrong password, signin button is pressed and is checked that login dialog stays displayed and there is correct
+        text on signin button.
         Then both correct email address and correct password are provided, signin button is pressed and is checked that login dialog disappears and correct
         user email is displayed in upper part of the screen.
         At the end logout link is clicked and is checked that login link is present.
@@ -71,7 +73,7 @@ class TestsAlza:
 
     def test_basket_add_remove_item(self):
         """
-        Test adding and removing from basket. First all cookies are rejected then logs in, adds computer to basket, then goes to basket,
+        Tests adding and removing item from basket. First all cookies are rejected then logs in, adds computer to basket, then goes to basket,
         checks name of item present, its count and price. Then removes item from basket and checks basket is empty.
         At the end logs out.
         """
@@ -116,9 +118,9 @@ class TestsAlza:
 
     def test_search(self):
         """
-        Test search functionality in 2 ways. First all cookies are rejected then logs in, provides search value, presses search button
+        Tests search functionality in 2 ways. First all cookies are rejected then logs in, provides search value, presses search button
         and checks header of result and that amount of items found is bigger than 0.
-        Then provides search value, waits for suggestions to appear, clicks first article in suggestions and check that name of article contains
+        Then provides search value, waits for suggestions to appear, clicks first article in suggestions and checks that name of article contains
         looked up word.
         At the end logs out.
         """
@@ -155,7 +157,7 @@ class TestsAlza:
 
     def test_watchdog_add_remove_item(self):
         """
-        Test adding and removing from watchdog list. First all cookies are rejected then logs in, adds watchdog to pet supply item,
+        Tests adding and removing item from watchdog list. First all cookies are rejected then logs in, adds watchdog to pet supply item,
         then goes to watchdog list, checks name of item present. Then removes item from watchdog list and checks watchdog list is empty.
         At the end logs out.
         """
@@ -199,9 +201,9 @@ class TestsAlza:
         # Logout.
         self.top_section.top_section_click_logout_link()
 
-    def test_account_changes(self):
+    def test_additional_account_changes(self):
         """
-        Test changes of information in user account. First all cookies are rejected then logs in and navigates to user account page.
+        Tests changes of information in user account. First all cookies are rejected then logs in and navigates to user account page.
         Then street, zip and city fields are filled in.
         Then navigates to main page and back to user account page where is checked that fields still have values provided into them.
         After that fields are returned to original state, i.e. cleared.

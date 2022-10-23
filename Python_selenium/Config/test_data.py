@@ -6,10 +6,9 @@ class TestData:
     incorrect_user_name = "aa@haizail.com"
     incorrect_password = "aaHes12"
     signin_button_incorrect_text = "Neplatné uživatelské jméno nebo heslo"
-
-    user_signed_in_text = "Moje Alza - " + user_name
     blank_email_text = "Zadejte e-mailovou adresu"
     blank_password_text = "Zadejte prosím heslo"
+    user_signed_in_text = "Moje Alza - " + user_name
 
     number_of_items_in_basket = 1
     text_once_all_items_removed_from_basket = "Jsem tak prázdný..."
