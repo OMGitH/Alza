@@ -169,7 +169,7 @@ class TestsAlza:
     def test_watchdog_add_remove_item(self):
         """
         Tests adding and removing item from watchdog list. First all cookies are rejected then logs in, adds watchdog to pet supply item,
-        then goes to watchdog list, checks name of item present. Then removes item from watchdog list and checks watchdog list is empty.
+        then goes to watchdog list, checks name of item present and its price limit. Then removes item from watchdog list and checks watchdog list is empty.
         At the end logs out.
         """
 
@@ -203,9 +203,11 @@ class TestsAlza:
         self.top_section.top_section_click_user_profile_link()
         self.my_account.my_account_click_account_settings_dropdown()
         self.my_account.my_account_click_at_watchdog_list_menu_item()
-        # Check watched item name.
+        # Check watched item name and price limit.
         actual_pet_supply_name = self.my_account.my_account_watchdog_list_get_watchdog_item_name()
         assert actual_pet_supply_name == first_pet_supply_name, f"Wrong name of pet supply in watchdogs. Actual pet supply name in watchdogs is {actual_pet_supply_name} but it shall be {first_pet_supply_name}. Pet supply that shall be in watchdogs is not?"
+        actual_price_limit = self.my_account.my_account_watchdog_get_price_limit_provided()
+        assert actual_price_limit == TestData.watchdog_price_limit, f"Wrong price limit displayed in watchdogs. Actual price limit in watchdogs is {actual_price_limit} but it shall be {TestData.watchdog_price_limit}."
         # Remove item from watchdog list.
         self.my_account.my_account_watchdog_list_remove_item_close_success_dialog()
         actual_text_once_watchdog_list_empty = self.my_account.my_account_watchdog_list_get_text_once_all_items_removed()

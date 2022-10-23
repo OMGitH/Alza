@@ -5,7 +5,6 @@ from Page_objects.base_page import BasePage
 
 
 class MyAccount(BasePage):
-
     # Identification of objects on my account page.
     account_settings_dropdown = (By.XPATH, "//div[@data-testid='menuSection-MyAccount']")
     my_account_menu_item = (By.XPATH, "//a[@data-testid='menuButton-UserSettings']")
@@ -20,6 +19,7 @@ class MyAccount(BasePage):
     watchdog_item = (By.XPATH, "//div[@class='watchDogInfo']/a")
     watchdog_item_1st_checkbox = (By.XPATH, "//div[@class='watchDogInfoItem priceLimit']//span[@class='checkboxBlue checked']")
     watchdog_item_2nd_checkbox = (By.XPATH, "//div[@class='watchDogInfoItem inStock']//span[@class='checkboxBlue checked']")
+    watchdog_price_limit_provided = (By.XPATH, "//span[@class='watchDogStatusLabel']/span")
     watchdog_item_removal_confirmation_button = (By.XPATH, "//div[@id='alzaDialog'][not(contains(@style, 'opacity'))]//span[@class='btnx normal green ok']")
     watchdog_remove_question_dialog = (By.ID, "alzaDialog")
     text_all_items_removed_from_watchdog_list = (By.XPATH, "//div[@class='watchDogList']//div[@class='alzBox warn']")
@@ -112,6 +112,13 @@ class MyAccount(BasePage):
         if self.base_is_visible(self.watchdog_item):
             watchdog_item_name = self.base_get_element_text(self.watchdog_item)
             return watchdog_item_name
+
+    def my_account_watchdog_get_price_limit_provided(self):
+        if self.base_is_visible(self.watchdog_price_limit_provided):
+            watchdog_price_limit = self.base_get_element_text(self.watchdog_price_limit_provided)
+            watchdog_price_limit = watchdog_price_limit.replace(" ", "")
+            watchdog_price_limit = watchdog_price_limit.replace("Kč", "")
+            return watchdog_price_limit
 
     def my_account_watchdog_list_remove_item_close_success_dialog(self):
         self.base_click(self.watchdog_item_1st_checkbox)
