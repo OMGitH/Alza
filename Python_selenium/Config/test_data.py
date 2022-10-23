@@ -19,7 +19,7 @@ class TestData:
     search_value_via_suggestion = "recenze"
     search_result_word_in_title_via_suggestion = "recenze"
 
-    watchdog_price_limit = "100"
+    watchdog_price_limit = "10"
     text_once_all_items_removed_from_watchdog_list = "Vaše bouda s hlídacími psy je prázdná."
 
     street_and_number = "Ulice 22"
