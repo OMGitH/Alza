@@ -102,8 +102,6 @@ class TestsAlza:
         self.main_page.main_page_click_cont_to_basket_button()
 
         # On basket page:
-        # Close assistant bubble if present:
-        self.basket.basket_close_assistant_bubble_if_exists()
         # Check item name, count and price.
         assert first_computer_name in self.basket.basket_get_item_name()
         assert self.basket.basket_get_item_count() == TestData.number_of_items_in_basket
