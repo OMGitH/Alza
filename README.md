@@ -1,6 +1,6 @@
 # Alza
 Basic automated UI tests of Alza webpage that use Python, Selenium and pytest. UI tests are created based on 5 example test cases that are in this repository as well together with example bug report. UI tests can be found in folder „Python_selenium“, example test cases with bug report in folder „Test_cases_Bug_report“.
-Following are steps describing actions needed to run tests on Windows operating system. Mostly they are described briefly with some specific actions described in more detail.
+Following are steps describing actions needed to run tests on Windows operating system. Mostly they are described briefly so they don't cover all possible issues though some specific actions are described in more detail.
 
 ## Python installation
 - Go to https://www.python.org/downloads/.
