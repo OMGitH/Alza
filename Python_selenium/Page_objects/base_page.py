@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # This is a base page class that contains methods that can be used at any page and thus is a parent of all pages.
 
-timeout_default = 15
+timeout_default = 20
 
 
 class BasePage:

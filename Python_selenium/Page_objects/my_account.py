@@ -39,7 +39,7 @@ class MyAccount(BasePage):
         self.base_click(self.my_account_menu_item)
         # Following methods help initialize the page as validations there are dynamic.
         self.base_is_visible(self.user_avatar_icon)
-        self.base_element_exists(self.data_was_saved_text, 40)
+        self.base_element_exists(self.data_was_saved_text, 50)
         # self.base_click(self.name_surname_input)
         # self.base_send_keys(self.name_surname_input, Keys.SPACE)
         # self.base_send_keys(self.name_surname_input, Keys.BACKSPACE)
