@@ -246,12 +246,15 @@ class TestsAlza:
         assert self.my_account.my_account_get_zip_value() == TestData.zip
         assert self.my_account.my_account_get_city_value() == TestData.city
 
-        # Clear city, street, zip. City as the first one because it is not validated thus if cleared as last it could happen it won't be saved.
-        self.my_account.my_account_clear_city_input()
+        # Clear city, street, zip.
         self.my_account.my_account_clear_street_input()
         self.my_account.my_account_clear_zip_input()
+        self.my_account.my_account_clear_city_input()
         # Refresh page to make sure fields are cleared.
         self.helpers.helpers_refresh_page()
+        assert self.my_account.my_account_get_street_value() == ""
+        assert self.my_account.my_account_get_zip_value() == ""
+        assert self.my_account.my_account_get_city_value() == ""
 
         # Logout.
         self.top_section.top_section_click_logout_link()
