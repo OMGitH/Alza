@@ -232,10 +232,10 @@ class TestsAlza:
         self.top_section.top_section_click_user_profile_link()
         self.my_account.my_account_click_account_settings_dropdown()
         self.my_account.my_account_click_my_account_menu_item()
-        # Fill in city, street, zip. City as the first one because it is not validated thus if filled in as last it could happen it won't be saved.
-        self.my_account.my_account_provide_city()
+        # Fill in street, zip, city.
         self.my_account.my_account_provide_street()
         self.my_account.my_account_provide_zip()
+        self.my_account.my_account_provide_city()
         # Go back to main page.
         self.top_section.top_section_click_alza_icon()
         # Go back to my account page and check provided values are stored.

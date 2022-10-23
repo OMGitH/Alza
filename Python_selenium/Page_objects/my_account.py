@@ -8,8 +8,7 @@ class MyAccount(BasePage):
     # Identification of objects on my account page.
     account_settings_dropdown = (By.XPATH, "//div[@data-testid='menuSection-MyAccount']")
     my_account_menu_item = (By.XPATH, "//a[@data-testid='menuButton-UserSettings']")
-    my_account_list_of_watches = (By.XPATH, "//a[@data-testid='menuButton-UserWatchDog']")
-    user_avatar_icon = (By.XPATH, "//div[@data-testid='userAvatar-Avatar']")
+    my_account_list_of_watchdogs = (By.XPATH, "//a[@data-testid='menuButton-UserWatchDog']")
     data_is_saving_text = (By.XPATH, "//span[@class='saving'][contains(@style, 'inline')]/span[@class='text']")
     data_was_saved_text = (By.XPATH, "//span[@class='saved'][contains(@style, 'inline')]/span[@class='text']")
     name_surname_input = (By.NAME, "name")
@@ -37,8 +36,7 @@ class MyAccount(BasePage):
 
     def my_account_click_my_account_menu_item(self):
         self.base_click(self.my_account_menu_item)
-        # Following methods help initialize the page as validations there are dynamic.
-        self.base_is_visible(self.user_avatar_icon)
+        # Following method helps initialize the page as validations there are dynamic.
         self.base_element_exists(self.data_was_saved_text, 50)
         # self.base_click(self.name_surname_input)
         # self.base_send_keys(self.name_surname_input, Keys.SPACE)
@@ -47,7 +45,7 @@ class MyAccount(BasePage):
         # self.base_send_keys(self.name_surname_input, Keys.TAB)
 
     def my_account_click_at_watchdog_list_menu_item(self):
-        self.base_click(self.my_account_list_of_watches)
+        self.base_click(self.my_account_list_of_watchdogs)
 
     def my_account_provide_street(self):
         self.base_clear_input(self.street_input)
