@@ -5,7 +5,7 @@ Following are steps describing actions needed to run tests on Windows operating 
 ## Python installation
 - Go to https://www.python.org/downloads/.
 - Under „Download the latest version for Windows“ click button „Download Python <version>“ and save the file.
-- Run downloaded .exe file. It is OK to select "Install Now" without any further configuration.
+- Run downloaded .exe file. It is OK to select „Install Now“ without any further configuration.
 
 ## Repository cloning and adding webdriver to Path
 - Clone GitHub repository at https://github.com/OMGitH/Alza to desired folder.
@@ -23,18 +23,18 @@ Following are steps describing actions needed to run tests on Windows operating 
 ## PyCharm installation
 - Go to https://www.jetbrains.com/pycharm/download/#section=windows.
 - Click „Download“ button in „Community“ section and save the file.
-- Run downloaded .exe file, and install PyCharm. There is no need to change anything during installation.
+- Run downloaded .exe file and install PyCharm. There is no need to change anything during installation.
 
 ## PyCharm configuration
 - Run PyCharm. At „Import PyCharm Settings“ dialog, choose whether you want to import settings or not.
-- At „Welcome to PyCharm“, click „Open“ icon, go to folder where „Alza“ folder is located. Open „Alza“ folder, select „Python_selenim“ folder and click „OK“. If there is a question about trust, click „Trust Project.
+- At „Welcome to PyCharm“, click „Open“ icon, go to folder where „Alza“ folder is located. Open „Alza“ folder, select „Python_selenim“ folder and click „OK“. If there is a question about trust, click „Trust Project“.
 - If there is a message about Java options environment variables displayed, it is OK to close it.
-- Go to „File“ – „Settings“ – „Projects: Python_selenium“ – „Python Interpreter“ and click „Add interpreter“ – „Add Local Interpreter“. In following window in field „Base interpreter“ there shall be prefilled path to installled Python. If not, select it there. Click „OK“ button. Virtual environment will be created. In „Python Interpreter“ field there is now way to Python in virtual environment. Close window by clicking „OK“ button.
+- Go to „File“ – „Settings“ – „Projects: Python_selenium“ – „Python Interpreter“ and click „Add interpreter“ – „Add Local Interpreter“. In following window in field „Base interpreter“ there shall be prefilled path to installled Python. If not, select it there. Click „OK“ button. Virtual environment will be created. In „Python Interpreter“ field there is now path to Python in virtual environment displayed. Close window by clicking „OK“ button.
 - Go to „File“ – „Settings“ – „Tools“ – „Python Integrated Tools“. In field „Package requirements file“ select „requirements.txt“ file that is in „Alza\Python_selenium\Config\requirements.txt“. Click „Apply“ button and close window by „OK“ button.
-- In project navigator go to „Alza\Python_selenium\Tests“ and open file „tests_Alza.py“. Once file is opened, at the top of the screen there is shown message saying that requirements are not installed. In the message click „Install requirements“ and in displayed window leave all requirements ticked and click „Install“ button.
+- In project navigator go to „Python_selenium\Tests“ and open file „tests_Alza.py“. Once file is opened, at the top of the screen there is shown message saying that requirements are not installed. In the message click „Install requirements“ and in displayed window leave all requirements ticked and click „Install“ button.
 - Once packages get installed, go to „File“ – „Settings“ – „Tools“ – „Python Integrated Tools“ and in field „Default test runner“ select „pytest“ and confirm by clicking „OK“ button.
 
 ## Test execution
-- In PyCharm open file „tests_Alza.py“ that is in „Alza\Python_selenium\Tests“.
+- In PyCharm open in project navigator file „tests_Alza.py“ that is in „Python_selenium\Tests“.
 - At „class TestAlza“ and each test (def) there is a green arrow on the left.
 - Click the arrow at particular test to run it or at class to run all tests.
