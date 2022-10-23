@@ -10,7 +10,7 @@ class Basket(BasePage):
     item_price_text = (By.XPATH, "//span[contains(@class, 'item-options') and not(text())]//ancestor::tr/td[@class='c5']")
     down_arrow_price_button = (By.XPATH, "//span[contains(@class, 'item-options') and not(text())]")
     down_arrow_price_remove_menu_item = (By.XPATH, "//div[@style='']//li[contains(@class, '-del')]")
-    text_all_items_removed_from_basket = (By.XPATH, "//div[@id='blocke']//span")
+    text_all_items_removed_from_basket = (By.XPATH, "//div[@id='blocke'][not(contains(@style, 'none'))]//span")
 
     # Initialization.
     def __init__(self, driver):

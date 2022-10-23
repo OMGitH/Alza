@@ -22,7 +22,7 @@ class MyAccount(BasePage):
     watchdog_price_limit_provided = (By.XPATH, "//span[@class='watchDogStatusLabel']/span")
     watchdog_item_removal_confirmation_button = (By.XPATH, "//div[@id='alzaDialog'][not(contains(@style, 'opacity'))]//span[@class='btnx normal green ok']")
     watchdog_remove_question_dialog = (By.ID, "alzaDialog")
-    text_all_items_removed_from_watchdog_list = (By.XPATH, "//div[@class='watchDogList']//div[@class='alzBox warn']")
+    text_all_items_removed_from_watchdog_list = (By.XPATH, "//div[@id='noWatchDogArticle'][not(contains(@style, 'none'))]//div[@class='alzBox warn']")
 
     # Initialization.
     def __init__(self, driver):
