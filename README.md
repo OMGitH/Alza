@@ -37,4 +37,4 @@ Following are steps describing actions needed to run tests on Windows operating 
 ## Test execution
 - In PyCharm open in project navigator file „tests_Alza.py“ that is in „Python_selenium\Tests“.
 - At „class TestsAlza“ and each test (def) there is a green arrow on the left.
-- Click the arrow at particular test to run it or at class to run all tests.
+- Click the arrow and select „Run ‚pytest for …‘“ at particular test to run it or at class to run all tests.
