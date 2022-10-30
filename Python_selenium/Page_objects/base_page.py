@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 timeout_default = 20
 
 
+
 class BasePage:
 
     def __init__(self, driver):
@@ -50,6 +51,11 @@ class BasePage:
         WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator)).clear()
 
     def base_element_exists(self, locator, timeout=timeout_default):
+        WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator))
+
+    """
+    Original uploaded code.
+    def base_element_exists(self, locator, timeout=timeout_default):
         try:
             WebDriverWait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
         except TimeoutException:
@@ -57,6 +63,7 @@ class BasePage:
             return flag
         flag = True
         return flag
+    """
 
     def base_clear_input_by_pressing_backspace(self, locator, attribute, timeout=timeout_default):
         element_attribute_value = self.base_get_element_attribute_value(locator, attribute, timeout)
